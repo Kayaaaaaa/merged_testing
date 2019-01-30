@@ -1,5 +1,5 @@
 
-module.exports = function() {
+module.exports = async function() {
 
   var req = this.req;
   var res = this.res;
@@ -25,5 +25,5 @@ module.exports = function() {
   intentMap.set('Default Fallback Intent', fallback);
   // intentMap.set('<INTENT_NAME_HERE>', yourFunctionHandler);
   // intentMap.set('<INTENT_NAME_HERE>', googleAssistantHandler);
-  agent.handleRequest(intentMap);
+  await agent.handleRequest(intentMap);
 }
