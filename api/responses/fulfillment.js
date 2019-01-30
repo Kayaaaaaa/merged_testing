@@ -1,5 +1,5 @@
 
-module.exports = async function() {
+module.exports = function() {
 
   var req = this.req;
   var res = this.res;
@@ -7,9 +7,7 @@ module.exports = async function() {
   const {WebhookClient} = require('dialogflow-fulfillment');
   const {Card, Suggestion} = require('dialogflow-fulfillment');
 
-  const agent = new WebhookClient({ req, res });
-  console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
-  console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
+  const agent = new WebhookClient({request: req, response: res});
 
   function welcome (agent) {
     agent.add(`Welcome to my agent!`);
@@ -25,5 +23,5 @@ module.exports = async function() {
   intentMap.set('Default Fallback Intent', fallback);
   // intentMap.set('<INTENT_NAME_HERE>', yourFunctionHandler);
   // intentMap.set('<INTENT_NAME_HERE>', googleAssistantHandler);
-  await agent.handleRequest(intentMap);
+  agent.handleRequest(intentMap);
 }
