@@ -149,7 +149,7 @@ module.exports = {
     ***************************************************************************/
     cors: {
       allowOrigins: [
-        'https://wecarebill-chatbot-test.herokuapp.com/',
+        'https://wecarebill-chatbot-test.herokuapp.com',
       ]
     },
 
@@ -251,7 +251,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-      'https://wecarebill-chatbot-test.herokuapp.com/',
+      'https://wecarebill-chatbot-test.herokuapp.com',
     ],
 
 
