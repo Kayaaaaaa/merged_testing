@@ -149,7 +149,7 @@ module.exports = {
     ***************************************************************************/
     cors: {
       allowOrigins: [
-        'https://sails-dialogflow.herokuapp.com',
+        'https://wecarebill-chatbot-test.herokuapp.com/',
       ]
     },
 
