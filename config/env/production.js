@@ -251,7 +251,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-      'https://sails-dialogflow.herokuapp.com',
+      'https://wecarebill-chatbot-test.herokuapp.com/',
     ],
 
 
