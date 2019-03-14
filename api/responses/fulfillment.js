@@ -14,7 +14,7 @@ admin.initializeApp({
   credential: admin.credential.cert({
     projectId: 'wecarebill-92132',
     clientEmail: 'foo@wecarebill-92132.iam.gserviceaccount.com',
-    privateKey: '-----BEGIN PRIVATE KEY-----\n<KEY>\n-----END PRIVATE KEY-----\n'
+    privateKey: '-----BEGIN PRIVATE KEY-----\nAIzaSyATvX8K5MUO6PNF_44rSPW2o9FGQSEJu1w\n-----END PRIVATE KEY-----\n'
   }),
   databaseURL: 'https://wecarebill-92132.firebaseio.com'
 });
@@ -28,7 +28,7 @@ var refreshToken; // Get refresh token from OAuth2 flow
 
 admin.initializeApp({
   credential: admin.credential.refreshToken(refreshToken),
-  databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
+  databaseURL: 'https://wecarebill-92132.firebaseio.com'
 });
 
 var admin = require('firebase-admin');
@@ -64,7 +64,7 @@ module.exports = function () {
   }
 
   function checking(agent){
-    
+    agent.add('Dummy')
   }
 
   // function yourFunctionHandler(agent) {
