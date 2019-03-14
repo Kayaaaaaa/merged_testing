@@ -1,6 +1,5 @@
 import firebase from "firebase";
 var firebase = require("firebase");
-src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"
 
 var config = {
   apiKey: "AIzaSyATvX8K5MUO6PNF_44rSPW2o9FGQSEJu1w",
