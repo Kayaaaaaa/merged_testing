@@ -1,5 +1,38 @@
 import firebase from "firebase";
 var firebase = require("firebase");
+import * as admin from 'firebase-admin';
+var admin = require('firebase-admin');
+
+var serviceAccount = require('path/to/serviceAccountKey.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'https://wecarebill-92132.firebaseio.com'
+});
+
+admin.initializeApp({
+  credential: admin.credential.cert({
+    projectId: 'wecarebill-92132',
+    clientEmail: 'foo@wecarebill-92132.iam.gserviceaccount.com',
+    privateKey: '-----BEGIN PRIVATE KEY-----\n<KEY>\n-----END PRIVATE KEY-----\n'
+  }),
+  databaseURL: 'https://wecarebill-92132.firebaseio.com'
+});
+
+admin.initializeApp({
+  credential: admin.credential.applicationDefault(),
+  databaseURL: 'https://wecarebill-92132.firebaseio.com'
+});
+
+var refreshToken; // Get refresh token from OAuth2 flow
+
+admin.initializeApp({
+  credential: admin.credential.refreshToken(refreshToken),
+  databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
+});
+
+var admin = require('firebase-admin');
+var app = admin.initializeApp();
 
 var config = {
   apiKey: "AIzaSyATvX8K5MUO6PNF_44rSPW2o9FGQSEJu1w",
@@ -30,6 +63,10 @@ module.exports = function () {
     agent.add(`I'm sorry, can you try again?`);
   }
 
+  function checking(agent){
+    
+  }
+
   // function yourFunctionHandler(agent) {
   //   agent.add(`This message is from Dialogflow's Cloud Functions for Firebase editor!`);
   //   agent.add(new Card({
@@ -48,6 +85,7 @@ module.exports = function () {
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('Default Fallback Intent', fallback);
+  intentMap.set('Default Fallback Intent', checking);
   // intentMap.set('<INTENT_NAME_HERE>', yourFunctionHandler);
   // intentMap.set('<INTENT_NAME_HERE>', googleAssistantHandler);
   agent.handleRequest(intentMap);
