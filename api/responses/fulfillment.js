@@ -19,10 +19,18 @@ module.exports = function () {
 
 // get the price via the general option id and specific option id
   function checking(agent){
+    let conv = agent.conv();
+    let params = agent.parameters;
+
+    const surgeryName = conv.contexts.get('userprovidesurgery-followup').parameters[surgery.original];
+    console.log(surgeryName);
+
     agent.add(new Card({
         buttonText:'',
     })
     );
+
+    agent.add(conv);
   }
 
   // function yourFunctionHandler(agent) {
@@ -43,7 +51,7 @@ module.exports = function () {
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('Default Fallback Intent', checking);
+  intentMap.set('User case confirm', checking);
   // intentMap.set('<INTENT_NAME_HERE>', yourFunctionHandler);
   // intentMap.set('<INTENT_NAME_HERE>', googleAssistantHandler);
   agent.handleRequest(intentMap)
