@@ -1,49 +1,3 @@
-import firebase from "firebase";
-var firebase = require("firebase");
-import * as admin from 'firebase-admin';
-var admin = require('firebase-admin');
-
-var serviceAccount = require('path/to/serviceAccountKey.json');
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://wecarebill-92132.firebaseio.com'
-});
-
-admin.initializeApp({
-  credential: admin.credential.cert({
-    projectId: 'wecarebill-92132',
-    clientEmail: 'foo@wecarebill-92132.iam.gserviceaccount.com',
-    privateKey: '-----BEGIN PRIVATE KEY-----\nAIzaSyATvX8K5MUO6PNF_44rSPW2o9FGQSEJu1w\n-----END PRIVATE KEY-----\n'
-  }),
-  databaseURL: 'https://wecarebill-92132.firebaseio.com'
-});
-
-admin.initializeApp({
-  credential: admin.credential.applicationDefault(),
-  databaseURL: 'https://wecarebill-92132.firebaseio.com'
-});
-
-var refreshToken; // Get refresh token from OAuth2 flow
-
-admin.initializeApp({
-  credential: admin.credential.refreshToken(refreshToken),
-  databaseURL: 'https://wecarebill-92132.firebaseio.com'
-});
-
-var admin = require('firebase-admin');
-var app = admin.initializeApp();
-
-var config = {
-  apiKey: "AIzaSyATvX8K5MUO6PNF_44rSPW2o9FGQSEJu1w",
-  authDomain: "wecarebill-92132.firebaseapp.com",
-  databaseURL: "https://wecarebill-92132.firebaseio.com",
-  projectId: "wecarebill-92132",
-  storageBucket: "wecarebill-92132.appspot.com",
-  messagingSenderId: "45479658617"
-};
-firebase.initializeApp(config);
-
 module.exports = function () {
 
   var req = this.req;
@@ -63,8 +17,12 @@ module.exports = function () {
     agent.add(`I'm sorry, can you try again?`);
   }
 
+// get the price via the general option id and specific option id
   function checking(agent){
-    agent.add('Dummy')
+    agent.add(new Card({
+        buttonText:'',
+    })
+    );
   }
 
   // function yourFunctionHandler(agent) {
@@ -88,7 +46,6 @@ module.exports = function () {
   intentMap.set('Default Fallback Intent', checking);
   // intentMap.set('<INTENT_NAME_HERE>', yourFunctionHandler);
   // intentMap.set('<INTENT_NAME_HERE>', googleAssistantHandler);
-  agent.handleRequest(intentMap);
-
+  agent.handleRequest(intentMap)
   
 }

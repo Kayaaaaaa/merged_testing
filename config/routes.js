@@ -20,6 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   'ALL /': 'FulfillmentController.index',
+  'GET /index2' :  'FulfillmentController.index2',
 
 
   /***************************************************************************
