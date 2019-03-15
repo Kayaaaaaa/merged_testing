@@ -23,12 +23,12 @@ module.exports = {
       databaseURL: 'https://wecarebill-92132.firebaseio.com'
 
     });
+    
 
     var db = admin.firestore();
     var surgery = await db.collection('surgery').doc('58').collection('option').doc('general').get()
     console.log(surgery);
 
-    
     return res.ok();
   },
 };

@@ -22,13 +22,8 @@ module.exports = function () {
     let conv = agent.conv();
     let params = agent.parameters;
 
-    const surgeryName = conv.contexts.get('userprovidesurgery-followup').parameters[surgery.original];
+    const surgeryName = conv.contexts.get('userprovidesurgery-followup').parameters.surgery.original;
     console.log(surgeryName);
-
-    agent.add(new Card({
-        buttonText:'',
-    })
-    );
 
     agent.add(conv);
   }
@@ -51,7 +46,7 @@ module.exports = function () {
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('User case confirm', checking);
+  intentMap.set('Default Fallback Intent', checking);
   // intentMap.set('<INTENT_NAME_HERE>', yourFunctionHandler);
   // intentMap.set('<INTENT_NAME_HERE>', googleAssistantHandler);
   agent.handleRequest(intentMap)
