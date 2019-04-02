@@ -10,9 +10,9 @@ module.exports = {
   // },
   index: async function (req, res) {
 
-    var admins = await Login.find();
-    return res.view('index', { 'admin': admins });
-    
+    // var admins = await Login.find();
+    // return res.view('index', { 'admin': admins });
+    return res.ok('ok')
 },
 
   index2: async function (req, res) {

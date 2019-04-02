@@ -19,4 +19,10 @@ module.exports.policies = {
 
   // '*': true,
 
+  FulfillmentController: {
+
+    create: 'isAdmin'
+
+  }
+
 };
