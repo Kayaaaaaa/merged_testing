@@ -36,7 +36,7 @@ module.exports = {
 
             sails.log("Session: " + JSON.stringify(req.session));
 
-            return res.redirect('/user/csv'); 
+            return res.redirect('/user/csv');
 
         });
 
@@ -55,12 +55,17 @@ module.exports = {
 
     csv: async function (req, res) {
 
-        if (req.method == "GET") return res.view('user/csv');
+        if (req.method == "GET")
+            return res.view('user/csv');
+        console.log('Export successfully');
+        ;
 
-        return res.redirect('/user/index2'); 
+    },
+
+    exportpage: async function (req, res) {
+
+        if (req.method == "GET") return res.view('user/exportpage');
 
     }
-
-
 };
 

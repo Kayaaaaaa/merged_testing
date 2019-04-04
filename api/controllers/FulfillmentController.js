@@ -9,9 +9,6 @@ module.exports = {
   //   return res.fulfillment();
   // },
   index: async function (req, res) {
-
-    // var admins = await Login.find();
-    // return res.view('index', { 'admin': admins });
     return res.ok('ok')
 },
 
