@@ -42,16 +42,15 @@ module.exports = {
 
     },
 
-    logout: async function (req, res) {
+    // logout: async function (req, res) {
 
-        req.session.destroy(function (err) {
+    //     req.session.destroy(function (err) {
 
-            if (err) return res.serverError(err);
+    //         if (err) return res.serverError(err);
+    //         return res.ok("Log out successfully");
 
-            return res.ok("Log out successfully");
-
-        });
-    },
+    //     });
+    // },
 
     csv: async function (req, res) {
 
@@ -62,10 +61,5 @@ module.exports = {
 
     },
 
-    exportpage: async function (req, res) {
-
-        if (req.method == "GET") return res.view('user/exportpage');
-
-    }
 };
 
