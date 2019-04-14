@@ -22,7 +22,8 @@ module.exports.policies = {
   FulfillmentController: {
 
     // create: 'isAdmin',
-    index2: 'isAdmin'
+    download: 'isAdmin',
+    upload: 'isAdmin'
   },
   UserController: {
     csv: 'isAdmin'

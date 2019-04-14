@@ -20,10 +20,11 @@ module.exports.routes = {
   ***************************************************************************/
 
   'ALL /': 'UserController.login',
-  'GET /index2' :  'FulfillmentController.index2',
+  'GET /download' :  'FulfillmentController.download',
   'GET /export.csv': 'FulfillmentController.csv',
   'GET /index': 'FulfillemntController.index',
   'GET /csv' : 'UserController.csv',
+  'ALL /upload': 'FulfillmentController.upload',
 
   /***************************************************************************
   *                                                                          *
