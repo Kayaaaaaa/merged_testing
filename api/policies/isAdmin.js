@@ -1,6 +1,6 @@
 module.exports = async function (req, res, proceed) {
 
-    if (req.session.username == 'admin','kelly') {
+    if (req.session.username) {
         return proceed();   //proceed to the next policy,
     }
 

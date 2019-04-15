@@ -47,10 +47,10 @@ module.exports = {
         req.session.destroy(function (err) {
 
             if (err) return res.serverError(err);
-            return res.ok("Log out successfully");
-
+            // return res.ok("Log out successfully");
+            return res.redirect('/user/login')
         });
-        
+
     },
 
     csv: async function (req, res) {
