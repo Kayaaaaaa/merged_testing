@@ -39,13 +39,11 @@ module.exports = {
         hospitalName: data.hospitalName,
         otherHospitalName: data.otherHospitalName,
         totalCost: data.totalCost,
-        surgeryName: data.surgeryName,
-        surgeryNo: data.surgeryNo,
+        surgeryCode: data.surgeryCode,
         generalCode: data.generalCode,
         specificCode: data.specificCode,
         specialCaseComplex: data.specialCaseComplex,
-        detailOfSpecficC: data.detailOfSpecficC
-
+        detailOfSpecificC: data.detailOfSpecificC,
       })
     });
     res.set('Content-type', 'text/csv');
